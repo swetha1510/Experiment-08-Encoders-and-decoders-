@@ -55,42 +55,73 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+
+### 1.Using OR gates construct 8:3 Encoder.
+
+### 2.Repeat the same procedure for 3:8 Decoder using AND gates.
+
+### 3.Find RTL logic and Timing diagram for both encoder and decoder.
+
+### 4.End the program.
 
 
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: SWETHA P
+RegisterNumber: 22008542
 
+### ENCODER 
 
+module encoder(d0,d1,d2,d3,d4,d5,d6.d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+### DECODER
 
-
+module decoder(a,b,c,d0,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=(~a&~b&~c),
+       d1=(~a&~b&c),
+		 d3=(~a&b&c),
+		 d4=(a&~b&~c),
+		 d5=(a&~b&c),
+		 d6=(a&b&~c);
+		 d7=(a&b&c);
+endmodule
+```
+### ENCODER
 
 ### RTL LOGIC  
-
-
-
-
-
-
+![encodertl](https://user-images.githubusercontent.com/120623583/214604316-395a0670-a434-41ab-afcc-5533c2f1725a.png)
+  
+### DECODER
+![decodertl](https://user-images.githubusercontent.com/120623583/214604483-9b3625e5-4205-49f9-a40b-587bae60f28c.png)
 
 
 ### TIMING DIGRAMS  
 
+### ENCODER 
+![encodesim (2)](https://user-images.githubusercontent.com/120623583/214604611-6e55cbe7-4813-44f7-aacd-e234f24b5a8c.png)
+
+### DECODER
+![decodesim](https://user-images.githubusercontent.com/120623583/214604870-46a268f3-c4f9-4382-a7c9-8fa04083e0d4.png)
 
 
+### TRUTH TABLE
 
+###ENCODER
+![encodetruth](https://user-images.githubusercontent.com/120623583/214605086-3f08d191-9c55-4c90-bbd0-d526d5e36441.png)
 
-### TRUTH TABLE 
-
-
-
-
+###DECODER
+![decodetruth](https://user-images.githubusercontent.com/120623583/214605193-b0d3f545-8c33-4c67-9863-11ef1405f927.png)
 
 
 ### RESULTS 
+Thus the Encoder and Decoder are designed and the truthtable are verified using quartus software.
