@@ -116,11 +116,11 @@ endmodule
 
 ### TRUTH TABLE
 
-###ENCODER 
+### ENCODER 
 
 ![encodetruth](https://user-images.githubusercontent.com/120623583/214605086-3f08d191-9c55-4c90-bbd0-d526d5e36441.png)
 
-###DECODER
+### DECODER
 
 ![decodetruth](https://user-images.githubusercontent.com/120623583/214605193-b0d3f545-8c33-4c67-9863-11ef1405f927.png)
 
